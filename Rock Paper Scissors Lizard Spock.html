@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+		<title>Rock Paper Scissors Lizard Spock</title>
+</head>
+
+<body>
+	<script>
+	/*Paige Watchey */
+	/*estimated time - 5-6 hours */ 
+	/*75-80% completed */ 
+	var userChoice = prompt("Do you choose rock, paper, scissors, lizard or spock?"); /*gets the user's choice */
+	var computerChoice = Math.random(); /*gets the computer's choice */
+/*randomly choosing the computer's choice */
+	 /* user interface */ 
+	 console.log( "Welcome to Rock Paper Scissors Lizard Spock!" ); 
+	 console.log( "Follow the prompts to play the game!!!" );
+	 console.log( "Good luck!!!" ); 
+	 /*while loop for error checking on entering values */ 
+	 while(userChoice != "rock" && userChoice != "paper" && userChoice != "scissors" && userChoice != "lizard" && userChoice!= "spock")
+	 {
+		userChoice = prompt("Please enter a valid value!");
+	 }
+	 
+	if (computerChoice <= 0.2)		/*1 divided by 5 gave me the paremeter for rock */ 
+	{
+		computerChoice = "rock";
+		console.log("Computer: "+ computerChoice);
+	} 
+	else if(computerChoice <= 0.4)  /*2 divided by 5 gave me the paremeter for paper */ 
+	{
+		computerChoice = "paper";
+		console.log("Computer: " + computerChoice); 
+	} 
+	else if(computerChoice <= 0.6) /*3 divided by 5 gave me the paremeter for scissors */ 
+	{
+		computerChoice = "scissors";
+		console.log("Computer: " + computerChoice);
+	} 
+	else if(computerChoice <= 0.8)  /*4 divided by 5 gave me the parameter for lizard */ 
+	{
+		computerChoice = "lizard"; 
+		console.log("Computer: "+ computerChoice);
+	}
+	else 
+	{
+		computerChoice = "spock";  /* the rest of the numbers left over until 1 are covered in
+									the else statement for spock */ 
+		console.log("Computer: "+ computerChoice);
+	}
+	/*end randomly choosing the computer's choice */ 
+	
+	
+	var compare = function(choice1, choice2)
+	{ 								/*start tie condition */ 
+    if (choice1 === choice2)
+    {
+        return "The result is a tie!" 
+		console.log("try again!"); 
+    } 								/*end tie condition */ 
+	else if (choice1 === "scissors") /*scissors vs paper */ 
+    {
+        if(choice2 === "paper")
+        {
+            return "scissors wins"; 
+        }
+        else if(choice2 === "rock") 						/* SCISSORS CONDITION */ 
+        {
+            return "rock wins"; 
+        }
+		else if(choice2 === "lizard")
+		{
+			return "scissors wins"; 
+		}
+		else 
+		{
+			return "spock wins"; 
+		}
+    }
+    if (choice1 === "paper") /*paper vs rock */ 
+    {
+        if (choice2 === "rock")
+        {
+            return "paper wins"; 
+        }
+        else if(choice2 === "scissors")
+		{
+			return "scissors wins"; 				/* PAPER CONDITION */ 
+		}
+		else if(choice2 === "lizard")
+		{
+			return "lizard wins"; 
+		}
+		else 
+		{
+			return "paper wins";
+		}
+    }
+	
+	
+    if(choice1 === "rock") /*scissors vs rock */ 
+    {
+        if(choice2 === "scissors")
+        {
+            return "rock wins"; 
+			
+        }
+        else if (choice2 === "paper") /* paper vs rock */
+        {
+            return "paper wins";
+																	/* ROCK CONDITION */ 
+        }
+		else if(choice2 === "lizard") /* lizard vs rock */ 
+		{
+			return "rock wins";
+		}
+		else  /*rock vs spock */ 
+		{
+			return "spock wins"; 
+		}
+		
+		
+	if(choice1 === "lizard") /*lizard vs paper */ 
+	{
+		if(choice2 === "paper" )
+		{
+			return "lizard wins";
+		}
+		else if(choice2 === rock) /*lizard vs rock */ 
+		{
+			return "rock wins";									/*LIZARD CONDITION */ 
+		}
+		else if(choice2 === scissors) /*lizard vs scissors */ 
+		{
+			return "scissors wins"; 
+		}
+		else 			/*lizard vs spock */ 
+		{	
+			return "lizard wins"; 
+		}
+		
+		
+	if(choice1 === "spock") /* spock vs rock */ 
+	{
+		if(choice2 === "rock")
+		{
+			return "spock wins";
+		}
+		else if(choice2 === "paper") /*spock vs paper */ 
+		{
+			return "paper wins";									/*SPOCK CONDITION */ 
+		}
+		else if(choice2 === "scissors")  /*spock vs scissors */ 
+		{
+			return "spock wins"; 
+		}	
+		else 						/*spock vs lizard */ 
+		{		
+			return "lizard wins"; 
+		}
+	}
+}; 
+ document.write(compare(userChoice,computerChoice));
+
+
+
+
+
+</script>
+</body>
+</html>
+
+
+
